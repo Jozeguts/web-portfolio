@@ -1,10 +1,21 @@
 import { ArrowRight, Code, Zap, GitBranch } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroPattern from "@/assets/hero-pattern.svg";
 
 export default function HeroSection() {
   return (
-    <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-      {/* Gradient Background */}
+    <section 
+      className="pt-32 pb-20 px-4 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${heroPattern})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background/80 via-background/60 to-background/80"></div>
+
+      {/* Animated Gradient Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>

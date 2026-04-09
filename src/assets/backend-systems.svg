@@ -1,0 +1,28 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cloud/Backend Illustration -->
+  <defs>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cloud -->
+  <path d="M 60 100 Q 50 85 65 75 Q 75 65 90 70 Q 100 55 120 65 Q 135 60 140 80 Q 150 75 155 95 Q 140 110 120 110 Q 100 120 70 115 Q 50 115 50 100 Z" 
+        fill="url(#cloudGrad)" stroke="#fed6e3" stroke-width="1.5"/>
+  
+  <!-- Data Points inside cloud -->
+  <circle cx="75" cy="90" r="3" fill="#ff6b6d" opacity="0.8"/>
+  <circle cx="95" cy="85" r="3" fill="#ff6b6d" opacity="0.8"/>
+  <circle cx="120" cy="90" r="3" fill="#ff6b6d" opacity="0.8"/>
+  <circle cx="85" cy="105" r="3" fill="#ff6b6d" opacity="0.8"/>
+  <circle cx="110" cy="108" r="3" fill="#ff6b6d" opacity="0.8"/>
+  
+  <!-- Connection Lines -->
+  <line x1="75" y1="90" x2="95" y2="85" stroke="#ff6b6d" stroke-width="1" opacity="0.4"/>
+  <line x1="95" y1="85" x2="120" y2="90" stroke="#ff6b6d" stroke-width="1" opacity="0.4"/>
+  <line x1="85" y1="105" x2="110" y2="108" stroke="#ff6b6d" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Download Arrow -->
+  <path d="M 100 130 L 100 145 M 95 140 L 100 145 L 105 140" stroke="#fed6e3" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

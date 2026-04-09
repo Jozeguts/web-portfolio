@@ -1,6 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchTestimonials } from "@/integrations/firebase/queries";
 import { Star, Quote } from "lucide-react";
+import sarahAvatar from "@/assets/avatar-sarah.svg";
+import davidAvatar from "@/assets/avatar-david.svg";
+import graceAvatar from "@/assets/avatar-grace.svg";
+
+const avatarMap = {
+  "Sarah M.": sarahAvatar,
+  "David K.": davidAvatar,
+  "Grace N.": graceAvatar,
+};
 
 const defaultTestimonials = [
   {
@@ -96,17 +105,24 @@ export default function TestimonialsSection() {
                 "{testimonial.content}"
               </p>
 
-              {/* Author */}
-              <div>
-                <p className="text-sm font-semibold text-foreground">
-                  {testimonial.client_name}
-                </p>
-                {testimonial.client_title && (
-                  <p className="text-xs text-muted-foreground">
-                    {testimonial.client_title}
-                    {testimonial.client_company && ` at ${testimonial.client_company}`}
+              {/* Author with Avatar */}
+              <div className="flex gap-3 items-center">
+                <img
+                  src={avatarMap[testimonial.client_name] || avatarMap["Sarah M."]}
+                  alt={testimonial.client_name}
+                  className="w-10 h-10 rounded-full"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    {testimonial.client_name}
                   </p>
-                )}
+                  {testimonial.client_title && (
+                    <p className="text-xs text-muted-foreground">
+                      {testimonial.client_title}
+                      {testimonial.client_company && ` at ${testimonial.client_company}`}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           ))}

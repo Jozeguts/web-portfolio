@@ -1,0 +1,29 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Web Development Illustration -->
+  <defs>
+    <linearGradient id="webGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b9d9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7bb9ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Browser Window -->
+  <rect x="30" y="40" width="140" height="120" rx="8" fill="url(#webGrad)" stroke="#5b9eff" stroke-width="2"/>
+  <rect x="30" y="40" width="140" height="25" rx="8" fill="#5b9eff"/>
+  
+  <!-- Browser Controls -->
+  <circle cx="42" cy="52" r="3" fill="#b9d9ff"/>
+  <circle cx="54" cy="52" r="3" fill="#b9d9ff"/>
+  <circle cx="66" cy="52" r="3" fill="#b9d9ff"/>
+  
+  <!-- Content Lines -->
+  <rect x="40" y="75" width="50" height="3" rx="1.5" fill="#5b9eff" opacity="0.6"/>
+  <rect x="40" y="82" width="75" height="2" rx="1" fill="#5b9eff" opacity="0.4"/>
+  <rect x="40" y="88" width="70" height="2" rx="1" fill="#5b9eff" opacity="0.4"/>
+  <rect x="40" y="100" width="40" height="3" rx="1.5" fill="#5b9eff" opacity="0.6"/>
+  <rect x="40" y="107" width="85" height="2" rx="1" fill="#5b9eff" opacity="0.4"/>
+  <rect x="40" y="113" width="60" height="2" rx="1" fill="#5b9eff" opacity="0.4"/>
+  
+  <!-- Code Brackets -->
+  <text x="120" y="95" font-size="28" font-family="monospace" fill="#5b9eff" font-weight="bold">&lt;/&gt;</text>
+</svg>

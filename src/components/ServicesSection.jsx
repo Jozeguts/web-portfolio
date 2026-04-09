@@ -1,21 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchServices } from "@/integrations/firebase/queries";
-import {
-  Code,
-  Smartphone,
-  Zap,
-  Palette,
-  Database,
-  Cloud,
-} from "lucide-react";
+import webDevIcon from "@/assets/web-development.svg";
+import mobileDevIcon from "@/assets/mobile-development.svg";
+import backendIcon from "@/assets/backend-systems.svg";
+import networkingIcon from "@/assets/networking.svg";
 
 const iconMap = {
-  "Web Development": <Code className="w-8 h-8" />,
-  "Mobile Development": <Smartphone className="w-8 h-8" />,
-  "Performance Optimization": <Zap className="w-8 h-8" />,
-  "UI/UX Design": <Palette className="w-8 h-8" />,
-  "Database Design": <Database className="w-8 h-8" />,
-  "Cloud Deployment": <Cloud className="w-8 h-8" />,
+  "Web Development": <img src={webDevIcon} alt="Web Development" className="w-8 h-8" />,
+  "Mobile Development": <img src={mobileDevIcon} alt="Mobile Development" className="w-8 h-8" />,
+  "Backend & APIs": <img src={backendIcon} alt="Backend Systems" className="w-8 h-8" />,
+  "Networking": <img src={networkingIcon} alt="Networking" className="w-8 h-8" />,
+  "Performance Optimization": <img src={backendIcon} alt="Performance" className="w-8 h-8" />,
+  "Database Design": <img src={backendIcon} alt="Database" className="w-8 h-8" />,
+  "Cloud Deployment": <img src={backendIcon} alt="Cloud" className="w-8 h-8" />,
+  "UI/UX Design": <img src={webDevIcon} alt="UI/UX" className="w-8 h-8" />,
 };
 
 export default function ServicesSection() {
