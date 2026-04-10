@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "@/integrations/firebase/client";
+import { auth } from "@/integrations/firebase/config";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { Terminal, LogOut, Eye } from "lucide-react";
+import DashboardTab from "@/components/admin/DashboardTab";
+import ServicesTab from "@/components/admin/ServicesTab";
+import SkillsTab from "@/components/admin/SkillsTab";
+import ProjectsTab from "@/components/admin/ProjectsTab";
+import TestimonialsTab from "@/components/admin/TestimonialsTab";
+import ContactsTab from "@/components/admin/ContactsTab";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -114,17 +120,12 @@ export default function AdminDashboard() {
 
       {/* Content */}
       <div className="container mx-auto px-4 py-8">
-        <div className="p-6 rounded-lg border border-border bg-card">
-          <p className="text-muted-foreground">
-            Tab: <span className="text-primary font-mono">{activeTab}</span>
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">
-            User: <span className="font-mono">{user.email}</span>
-          </p>
-          <p className="text-xs text-muted-foreground mt-4">
-            Note: Full admin components should be implemented following the Portfolio_Website_Blueprint.md specification.
-          </p>
-        </div>
+        {activeTab === "dashboard" && <DashboardTab />}
+        {activeTab === "services" && <ServicesTab />}
+        {activeTab === "skills" && <SkillsTab />}
+        {activeTab === "projects" && <ProjectsTab />}
+        {activeTab === "testimonials" && <TestimonialsTab />}
+        {activeTab === "contacts" && <ContactsTab />}
       </div>
     </div>
   );

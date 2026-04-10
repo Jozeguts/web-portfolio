@@ -1,5 +1,4 @@
 import { ArrowRight, Code, Zap, GitBranch } from "lucide-react";
-import { Link } from "react-router-dom";
 import heroPattern from "@/assets/hero-pattern.svg";
 
 export default function HeroSection() {
@@ -43,13 +42,13 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
-              <Link
-                to="#contact"
+              <a
+                href="#contact"
                 className="group px-6 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 font-medium flex items-center gap-2 transition-all"
               >
                 Get Started
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
               <a
                 href="#portfolio"
                 className="px-6 py-3 rounded-lg border border-border hover:border-primary/50 font-medium transition-colors"

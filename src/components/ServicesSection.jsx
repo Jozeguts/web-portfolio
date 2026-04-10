@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Code } from "lucide-react";
 import { fetchServices } from "@/integrations/firebase/queries";
 import webDevIcon from "@/assets/web-development.svg";
 import mobileDevIcon from "@/assets/mobile-development.svg";

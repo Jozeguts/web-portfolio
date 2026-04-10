@@ -46,6 +46,48 @@
   //     ]
   //   },
   // ]
-  "indexes": [],
+  "indexes": [
+    {
+      "collectionGroup": "services",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "is_active", "mode": "ASCENDING" },
+        { "fieldPath": "display_order", "mode": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "skills",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "is_active", "mode": "ASCENDING" },
+        { "fieldPath": "display_order", "mode": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "is_active", "mode": "ASCENDING" },
+        { "fieldPath": "display_order", "mode": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "projects",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "is_active", "mode": "ASCENDING" },
+        { "fieldPath": "is_featured", "mode": "ASCENDING" },
+        { "fieldPath": "display_order", "mode": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "testimonials",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "is_active", "mode": "ASCENDING" },
+        { "fieldPath": "display_order", "mode": "ASCENDING" }
+      ]
+    }
+  ],
   "fieldOverrides": []
 }

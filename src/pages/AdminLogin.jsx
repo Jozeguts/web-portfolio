@@ -27,7 +27,7 @@ export default function AdminLogin() {
         navigate("/admin");
       } else {
         await auth.signOut();
-        setError("You don't have admin privileges. Contact the site owner.");
+        setError("→ You don't have admin privileges. Contact the site owner.");
       }
     } catch (err) {
       if (err.code === "auth/popup-closed-by-user") {
