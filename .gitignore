@@ -22,6 +22,10 @@ serviceAccountKey.json
 # Firebase build cache
 .firebase/
 
+# Documentation (sensitive setup/deployment guides)
+*.md
+!README.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
