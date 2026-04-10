@@ -67,4 +67,15 @@
  * @property {Date} submitted_at
  */
 
+/**
+ * @typedef {Object} FileUploadResult
+ * @property {string} url - The public download URL of the uploaded file
+ * @property {string} path - The storage path (resources/{category}/{timestamp}-{filename})
+ * @property {string} category - The resource category folder
+ */
+
+// File Upload Functions:
+// - uploadFileToResources(file, category) - Upload file to resources/{category}/ and return public URL
+// - deleteFileFromResources(downloadUrl) - Delete file from resources folder by URL
+
 export {};

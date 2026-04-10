@@ -10,7 +10,8 @@ import {
   where,
   orderBy,
 } from "firebase/firestore";
-import { db } from "./config";
+import { ref, uploadBytes, deleteObject, getDownloadURL } from "firebase/storage";
+import { db, storage } from "./config";
 
 // Services queries
 export const fetchServices = async () => {
@@ -293,6 +294,62 @@ export const deleteTestimonial = async (id) => {
     await deleteDoc(doc(db, "testimonials", id));
   } catch (error) {
     console.error("Error deleting testimonial:", error);
+    throw error;
+  }
+};
+
+// File upload functions for resources folder
+/**
+ * Upload a file to the resources folder and get its public URL
+ * @param {File} file - The file to upload
+ * @param {string} category - Subfolder category (e.g., 'projects', 'documents', 'media')
+ * @returns {Promise<string>} The public download URL of the uploaded file
+ */
+export const uploadFileToResources = async (file, category = "general") => {
+  try {
+    if (!file) throw new Error("No file provided");
+    
+    // Create path: resources/{category}/{timestamp}-{filename}
+    const timestamp = Date.now();
+    const fileName = `${timestamp}-${file.name}`;
+    const storagePath = `resources/${category}/${fileName}`;
+    
+    // Upload file
+    const storageRef = ref(storage, storagePath);
+    await uploadBytes(storageRef, file);
+    
+    // Get public download URL
+    const downloadUrl = await getDownloadURL(storageRef);
+    
+    return downloadUrl;
+  } catch (error) {
+    console.error("Error uploading file to resources:", error);
+    throw error;
+  }
+};
+
+/**
+ * Delete a file from the resources folder by its URL
+ * @param {string} downloadUrl - The full download URL of the file to delete
+ */
+export const deleteFileFromResources = async (downloadUrl) => {
+  try {
+    if (!downloadUrl) throw new Error("No URL provided");
+    
+    // Extract the path from the download URL
+    const urlParts = downloadUrl.split("/o/")[1]?.split("?")[0];
+    if (!urlParts) throw new Error("Invalid file URL format");
+    
+    // Decode URL encoded path
+    const decodedPath = decodeURIComponent(urlParts);
+    
+    // Delete the file
+    const fileRef = ref(storage, decodedPath);
+    await deleteObject(fileRef);
+    
+    console.log("File deleted successfully");
+  } catch (error) {
+    console.error("Error deleting file from resources:", error);
     throw error;
   }
 };

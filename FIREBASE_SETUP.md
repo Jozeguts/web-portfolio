@@ -104,6 +104,42 @@ Stores contact form submissions.
 
 ## Available Functions
 
+### File Management (Resources Folder)
+All files are uploaded to a centralized **`resources/`** folder in Cloud Storage and URLs are stored in Firestore.
+
+- `uploadFileToResources(file, category)` - Upload file and return public URL
+  - `file`: File object from input
+  - `category`: Subfolder (e.g., "projects", "documents", "media", "general")
+  - Returns: Public download URL to store in Firestore
+
+- `deleteFileFromResources(downloadUrl)` - Delete file by its URL
+
+**Example: Upload Project Image**
+```javascript
+import { uploadFileToResources, updateProject } from "@/integrations/firebase/queries";
+
+// Upload image to resources/projects/
+const imageUrl = await uploadFileToResources(fileFromInput, "projects");
+
+// Store URL in Firestore
+await updateProject("project-id", {
+  image_url: imageUrl
+});
+```
+
+**Storage Structure:**
+```
+resources/
+├── projects/
+│   └── [timestamp]-filename.jpg
+├── documents/
+│   └── [timestamp]-resume.pdf
+├── media/
+│   └── [timestamp]-video-thumbnail.png
+└── general/
+    └── [timestamp]-other-file.format
+```
+
 ### Query Functions (Read-Only)
 - `fetchServices()` - Get all active services
 - `fetchSkills()` - Get all active skills grouped by category
@@ -130,6 +166,10 @@ Stores contact form submissions.
 - `deleteTestimonial(id)` - Remove testimonial
 
 - `submitContactRequest(formData)` - Save contact form submission
+
+### File Upload Functions
+- `uploadFileToResources(file, category)` - Upload file to resources/{category} and return public URL
+- `deleteFileFromResources(downloadUrl)` - Delete file from Cloud Storage by URL
 
 ## Usage Examples
 
