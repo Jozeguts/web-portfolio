@@ -19,9 +19,9 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "Services", href: "#services" },
     { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
     { label: "Portfolio", href: "#portfolio" },
     { label: "Contact", href: "#contact" },
-    { label: "Resume", href: "/resume" },
   ];
 
   return (

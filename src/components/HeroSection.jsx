@@ -36,8 +36,9 @@ export default function HeroSection() {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Full-stack developer specializing in React, TypeScript, and cloud technologies. 
-              Transforming ideas into scalable, high-performance applications.
+              Full-stack software engineer and systems architect with expertise in web development, 
+              Android applications, networking infrastructure, and systems administration. 
+              Passionate about leveraging technology to solve complex problems and drive innovation.
             </p>
 
             {/* CTA Buttons */}
